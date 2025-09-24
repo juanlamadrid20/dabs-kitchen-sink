@@ -1,0 +1,20 @@
+resources:
+  apps:
+    sample-app:
+      name: ${var.app_name}
+      description: "AI-powered Business Intelligence Agent"
+      # resources:
+      #     - name: agent-endpoint
+      #       serving_endpoint:
+      #         name: ${var.model_endpoint_name}
+      #         permission: "CAN_QUERY"
+      #     - database:
+      #         database_name: ${var.lakebase_database_name}
+      #         instance_name: ${var.lakebase_instance_name}
+      #         permission: CAN_CONNECT_AND_CREATE
+      #       name: database
+      # user_api_scopes: ["serving.serving-endpoints"]
+      source_code_path: ../src/app
+      permissions:
+        - level: "CAN_USE"
+          user_name: ${var.user_name}
