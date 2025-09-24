@@ -1,0 +1,14 @@
+# The main pipeline for dabs_kitchen_sink
+resources:
+  pipelines:
+    dabs_kitchen_sink_pipeline:
+      name: dabs_kitchen_sink_pipeline
+      catalog: main
+      schema: dabs_kitchen_sink_${bundle.target}
+      serverless: true
+      libraries:
+        - notebook:
+            path: ../src/pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: ${workspace.file_path}/src
